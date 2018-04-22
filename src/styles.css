@@ -1,0 +1,15 @@
+
+
+.react-datepicker__input-container {
+  width: 100% !important;
+}
+
+
+glyphicon.glyphicon-trash, ul.list-group li.list-group-item {
+  cursor: pointer!important;
+}
+
+
+.trash-class, .list-group-class {
+    cursor: pointer
+}

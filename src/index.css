@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.react-datepicker__input-container {
+  width: 100% !important;
+}
+
+
+ul.list-group li.list-group-item span.glyphicon-trash, ul.list-group li.list-group-item {
+  cursor: pointer;
+}
+
+.trash-class, .list-group-class {
+    cursor: pointer
+}
