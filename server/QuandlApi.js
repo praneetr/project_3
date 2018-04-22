@@ -6,9 +6,9 @@ var getRows = (formData, callback) => {
     {
       url: `https://www.quandl.com/api/v3/datasets/WIKI/${
         formData.userInputs.ticker
-      }.json?start_date=${formData.userInputs.startDate}&end_date=${
+        }.json?start_date=${formData.userInputs.startDate}&end_date=${
         formData.userInputs.endDate
-      }&collapse=daily&key=Vk29NQzysMurK6sfhDxw`,
+        }&collapse=daily&key=Nx66MyUyNszXs_juBxTr`,
       json: true
     },
     (error, response, body) => {
