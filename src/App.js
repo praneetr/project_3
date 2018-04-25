@@ -16,7 +16,13 @@ import {
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
+import API from "./utils/auth.js";
+
+var cors = require('cors')
+app.use(cors(corsOptions));
+
 class App extends Component {
+
   //form data
   state = {
     quandlForm: {
@@ -55,6 +61,8 @@ class App extends Component {
     tickerData: null,
     searchHistory: null
   };
+
+
 
   //validation function - checking for the rules we defined on the quandl form data state object
 
@@ -172,10 +180,26 @@ class App extends Component {
     this.props.showClickedSearchItem(id).then(res => {
       this.setState({ tickerData: this.props.data[0][0] });
     });
+  }
+
+  handleFormSubmit = event => {
+    event.preventDefault();
+
+    API.register({
+      email: "test@test.com",
+      password: "somepass",
+      token: "REAL TOKEN HERE"
+    })
+      .then(res => console.log(res))
+      .catch(err => console.log(err));
+
   };
+
 
   render() {
     //looping on the quandl form state obj and pushing the id and every input type(first name, last name....)
+
+
     const contactForm = [];
     for (let key in this.state.quandlForm) {
       contactForm.push({
@@ -214,6 +238,7 @@ class App extends Component {
     );
 
     return (
+
       <Grid>
         <Row>
           <Col xs={12} sm={12} md={12}>
@@ -265,10 +290,12 @@ class App extends Component {
             <Footer />
           </Col>
         </Row>
+        <Button onClick={this.handleFormSubmit} > Submit Form </Button>
       </Grid>
     );
-  }
-}
+  };
+};
+
 
 // Make data  array available in  props
 function mapStateToProps(state) {
