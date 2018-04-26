@@ -9,6 +9,15 @@ var app = express();
 const port = process.env.PORT || 8080;
 var bodyParser = require("body-parser");
 var db;
+
+var cors = require('cors');
+const corsOptions = {
+  origin: "*",
+};
+app.use(cors(corsOptions));
+
+
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app

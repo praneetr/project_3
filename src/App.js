@@ -16,10 +16,16 @@ import {
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
+import Register from "./components/credentials/Register";
+import Login from "./components/credentials/Login";
+
 import API from "./utils/auth.js";
 
-var cors = require('cors')
-app.use(cors(corsOptions));
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
+
+
+
 
 class App extends Component {
 
@@ -152,6 +158,7 @@ class App extends Component {
     };
 
     //posting the form data to the server
+
     axios.post("/api/get-ticker-data", { formData }).then(response => {
       this.setState({ tickerData: response.data.data });
     });
@@ -199,6 +206,14 @@ class App extends Component {
   render() {
     //looping on the quandl form state obj and pushing the id and every input type(first name, last name....)
 
+    <Router>
+      <div>
+
+        <Route path="/login" component={Login} />
+        <Route path="/register" component={Register} />
+
+      </div>
+    </Router>
 
     const contactForm = [];
     for (let key in this.state.quandlForm) {
