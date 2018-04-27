@@ -206,14 +206,6 @@ class App extends Component {
   render() {
     //looping on the quandl form state obj and pushing the id and every input type(first name, last name....)
 
-    <Router>
-      <div>
-
-        <Route path="/login" component={Login} />
-        <Route path="/register" component={Register} />
-
-      </div>
-    </Router>
 
     const contactForm = [];
     for (let key in this.state.quandlForm) {
@@ -254,59 +246,70 @@ class App extends Component {
 
     return (
 
-      <Grid>
-        <Row>
-          <Col xs={12} sm={12} md={12}>
-            <Header />
-          </Col>
-        </Row>
-        <Row style={{ minHeight: 'calc(100vh - 100px)' }}>
-          <Col xs={12} sm={12} md={8}>
-            {form}
-            <Row>
-              <Col xs={12} sm={12} md={12}>
-                {this.state.tickerData && (
-                  <TableComponent
-                    tickerData={this.state.tickerData}
-                    selectedDate={this.state.startDate}
-                  />
-                )}
-              </Col>
-            </Row>
-          </Col>
-          <Col xs={12} sm={12} md={4} />
-          <Col xs={12} sm={12} md={4}>
-            {this.props.searchHistory.length > 0 && (
-              <SearchedListComponent
-                showSearchedData={this.showSearchedDataHandler}
-                deleteStock={this.deleteStockDataHandler}
-                searchHistory={this.props.searchHistory}
-              />
-            )}
-          </Col>
-        </Row>
-        <Row>
-          {this.state.tickerData && (
+      <div>
+        <Router>
+          <div>
+
+            <Route path="/login" component={Login} />
+            <Route path="/register" component={Register} />
+
+          </div>
+        </Router>
+
+        <Grid>
+          <Row>
             <Col xs={12} sm={12} md={12}>
-              <Button
-                style={{ marginTop: 20 }}
-                bsStyle="success"
-                bsSize="large"
-                disabled={!this.state.isFormValid}
-                onClick={this.saveStockDataHandler}
-              >
-                Save
-              </Button>
+              <Header />
             </Col>
-          )}
-        </Row>
-        <Row>
-          <Col xs={12} sm={12} md={12}>
-            <Footer />
-          </Col>
-        </Row>
-        <Button onClick={this.handleFormSubmit} > Submit Form </Button>
-      </Grid>
+          </Row>
+          <Row style={{ minHeight: 'calc(100vh - 100px)' }}>
+            <Col xs={12} sm={12} md={8}>
+              {form}
+              <Row>
+                <Col xs={12} sm={12} md={12}>
+                  {this.state.tickerData && (
+                    <TableComponent
+                      tickerData={this.state.tickerData}
+                      selectedDate={this.state.startDate}
+                    />
+                  )}
+                </Col>
+              </Row>
+            </Col>
+            <Col xs={12} sm={12} md={4} />
+            <Col xs={12} sm={12} md={4}>
+              {this.props.searchHistory.length > 0 && (
+                <SearchedListComponent
+                  showSearchedData={this.showSearchedDataHandler}
+                  deleteStock={this.deleteStockDataHandler}
+                  searchHistory={this.props.searchHistory}
+                />
+              )}
+            </Col>
+          </Row>
+          <Row>
+            {this.state.tickerData && (
+              <Col xs={12} sm={12} md={12}>
+                <Button
+                  style={{ marginTop: 20 }}
+                  bsStyle="success"
+                  bsSize="large"
+                  disabled={!this.state.isFormValid}
+                  onClick={this.saveStockDataHandler}
+                >
+                  Save
+              </Button>
+              </Col>
+            )}
+          </Row>
+          <Row>
+            <Col xs={12} sm={12} md={12}>
+              <Footer />
+            </Col>
+          </Row>
+          <Button onClick={this.handleFormSubmit} > Submit Form </Button>
+        </Grid>
+      </div>
     );
   };
 };

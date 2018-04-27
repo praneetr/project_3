@@ -16,9 +16,3 @@ export default {
     return axios.post('http://' + BASEURL + '/users/register', formData);
   }
 };
-
-var cors = require("cors");
-const corsOptions = {
-  origin: "*",
-};
-app.use(cors(corsOptions));

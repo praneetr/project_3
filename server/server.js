@@ -10,11 +10,11 @@ const port = process.env.PORT || 8080;
 var bodyParser = require("body-parser");
 var db;
 
-var cors = require('cors');
-const corsOptions = {
-  origin: "*",
-};
-app.use(cors(corsOptions));
+// var cors = require('cors');
+// const corsOptions = {
+//   origin: "*",
+// };
+// app.use(cors(corsOptions));
 
 
 
