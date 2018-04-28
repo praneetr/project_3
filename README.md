@@ -5,8 +5,9 @@ For example, Amazon company last reported earnings on February 1st, 2018. We can
 To start this application you must do the following:
 
  1. In Terminal Window #1 and at the root directory of the folder Run "Yarn Sever" - this will run the API server
- 2. In Terminal Window #2 run "mongod" - this will start the Mongo database connection 
- 3. In Terminal Window #3 run "yarn start" - this will initialize the application in a browser window
+ 2. In Terminal Window #2 go to the root directory of the authentication/login file and run this file using an NPM start. The authentication/login file is located here => https://github.com/praneetr/mongo-express-auth-demo
+ 2. In Terminal Window #3 run "mongod" - this will start the Mongo database connection 
+ 3. In Terminal Window #4 run "yarn start" - this will initialize the application in a browser window
 
 Click "Save" to save ticker data to mongoDB and have the ticker added to the search history show on the right side of the screen.
 

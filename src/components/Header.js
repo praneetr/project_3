@@ -33,14 +33,14 @@ class Header extends Component {
                             marginRight: "15px"
                           }
                         } >
-                        Login <
+                        Logout <
       /Navbar.Text> < /
       Navbar.Collapse > <
       /Navbar> < /
       header > <
       /div>
-                      );
-                    }
-                  }
-                  
+                                        );
+                                      }
+                                    }
+                                    
 export default Header;
